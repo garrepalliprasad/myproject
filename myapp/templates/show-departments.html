@@ -1,0 +1,10 @@
+{% if departments %}
+    {% for department in departments %}
+    <div>
+        {{department.name}}
+        <a href="{% url 'update-department' department.id %}">update</a>
+    </div>
+    {% endfor %}
+{% else %}
+    <h3>No Departments at the moment!</h3>
+{% endif %}

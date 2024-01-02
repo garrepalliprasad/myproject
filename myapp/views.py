@@ -20,11 +20,20 @@ def show_departments(request):
 
 def update_department(request,pk):
     department=Department.objects.get(id=pk)
-    form=DepartmentForm(department)
+    form=DepartmentForm(instance=department)
     if request.method=='POST':
+        print(request.POST)
         form=DepartmentForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect('show-departments')
     context={'form':form}
     return render(request,'update-department.html',context)
+
+def delete_department(request,pk):
+    department=Department.objects.get(id=pk)
+    if request.method=='POST':
+        department.delete()
+        return redirect('show-departments')
+    context={'department':department}
+    return render(request,'delete-department.html',context)

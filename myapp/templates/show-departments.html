@@ -3,6 +3,7 @@
     <div>
         {{department.name}}
         <a href="{% url 'update-department' department.id %}">update</a>
+        <a href="{% url 'delete-department' department.id %}">delete</a>
     </div>
     {% endfor %}
 {% else %}

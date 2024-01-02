@@ -11,3 +11,7 @@ class Faculty(models.Model):
     name = models.CharField(max_length=100)
     dob=models.DateTimeField(auto_now_add=True)
     department=models.ForeignKey(Department,on_delete=models.CASCADE)
+
+
+
+

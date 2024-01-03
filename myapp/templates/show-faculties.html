@@ -1,0 +1,11 @@
+{% if faculties %}
+    {% for faculty in faculties %}
+    <p>
+        {{faculty.name}}-{{faculty.department}}
+        <a href="{% url 'update-faculty' faculty.id %}">update</a>
+        <a href="{% url 'delete-faculty' faculty.id %}">delete</a>
+    </p>
+    {% endfor %}
+{% else %}
+ <h2>No Facuties at the moment!</h2>
+{% endif %}

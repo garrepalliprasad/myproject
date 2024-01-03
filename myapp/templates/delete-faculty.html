@@ -1,0 +1,7 @@
+<h2 style="color: red;">Are you sure? want  to delete {{faculty.name}}</h2>
+<h3>Click Delete to delete,Cancel to cancel</h3>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+    <a href="{% url 'show-faculties' %}">Cancel</a>
+</form>
